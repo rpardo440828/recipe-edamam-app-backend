@@ -5,7 +5,7 @@ import authRoutes from "./routes/auth.js";
 
 const PORT = process.env.PORT || 3030;
 const app = express();
-app.use(cors({origin: 'https://recipe-edamam-app-6004c468e055.herokuapp.com/', credentials: true}));
+app.use(cors({origin: 'https://recipesearchsite.netlify.app/', credentials: true}));
 
 app.use(express.json());
 app.use(cookieParser());
