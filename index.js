@@ -5,7 +5,7 @@ import authRoutes from "./routes/auth.js";
 
 const PORT = process.env.PORT || 3030;
 const app = express();
-app.use(cors());
+app.use(cors({credentials: true}));
 // app.use(cors({origin: 'https://recipesearchsite.netlify.app/', credentials: true}));
 
 app.use(express.json());
