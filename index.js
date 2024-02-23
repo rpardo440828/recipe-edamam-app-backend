@@ -5,7 +5,17 @@ import authRoutes from "./routes/auth.js";
 
 const PORT = process.env.PORT || 3030;
 const app = express();
-app.use(cors({AccessControlAllowOrigin: 'https://recipesearchsite.netlify.app/', AccessControlAllowCredentials: true}));
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Credentials", true);
+    next();
+});
+
+const options = {
+    origin: 'https://recipesearchsite.netlify.app',
+    credentials: true
+}
+app.use(cors(options));
 
 app.use(express.json());
 app.use(cookieParser());
